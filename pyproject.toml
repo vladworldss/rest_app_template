@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "local-docker-hub"
+version = "0.1.0"
+description = ""
+authors = ["Vladimir Gerasimenko <vladworldss@yandex.ru>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "local_docker_hub"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.79.0"
+asyncpg = "^0.26.0"
+uvicorn = "^0.18.2"
+tomlkit = "^0.11.6"
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.2.1"
+pytest-asyncio = "^0.20.3"
+pytest-cov = "^3.0.0"
+httpx = "^0.23.0"
+
+[tool.pytest.ini_options]
+testpaths = "tests/unit"
+python_files = "*.py"
+addopts = "-rfs -p no:warnings --tb=short --show-capture=no"
+filterwarnings = [
+    "error",
+    "ignore::UserWarning",
+    "ignore::DeprecationWarning"
+]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
