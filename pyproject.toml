@@ -9,16 +9,21 @@ packages = [{include = "local_docker_hub"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
-fastapi = "^0.79.0"
-asyncpg = "^0.26.0"
-uvicorn = "^0.18.2"
-tomlkit = "^0.11.6"
+fastapi = "^0.95.2"
+uvicorn = "^0.22.0"
+asyncpg = "^0.28.0"
+tomlkit = "^0.12.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^7.2.1"
 pytest-asyncio = "^0.20.3"
 pytest-cov = "^3.0.0"
 httpx = "^0.23.0"
+mockito = "^1.2.2"
+pytest-mockito = "^0.0.4"
+mypy = "^0.971"
+black = "^22.10.0"
+isort = "^5.10.1"
 
 [tool.pytest.ini_options]
 testpaths = "tests/unit"

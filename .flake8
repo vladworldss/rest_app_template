@@ -1,0 +1,16 @@
+[flake8]
+max-line-length = 120
+
+# Игнорировать docstrings предупреждение “Missing docstring in public class”, one whitespace before docstring
+ignore = D101, D203, W503
+
+exclude = .git,__pycache__,docs/source/conf.py,old,build,dist,*migrations*,tests,venv,.venv
+
+# Указываем флейку директории, в которых хранятся локальные пакеты.
+application-import-names = app
+
+# Указываем флейку на то, в каком порядке должны идти импорты. За основу берем Google Style Guide.
+import-order-style = google
+
+# Указываем, какой тип кавычек должен использоваться в проекте
+inline-quotes = '

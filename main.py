@@ -5,7 +5,6 @@ import uvicorn
 from app.build_app import build_app
 from app.settings import get_settings
 
-
 if __name__ == '__main__':
     uvicorn.run(
         build_app(get_settings()),
