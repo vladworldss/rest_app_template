@@ -1,0 +1,2 @@
+class EmailRepoError(Exception):
+    pass
