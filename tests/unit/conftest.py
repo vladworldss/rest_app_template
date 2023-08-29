@@ -59,6 +59,9 @@ def db_connection():
         async def fetchval(self, *args, **kwargs):
             pass
 
+        async def fetchrow(self, *args, **kwargs):
+            pass
+
     yield Pool()
 
 
