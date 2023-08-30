@@ -1,3 +1,4 @@
+import os
 import pathlib
 
 from functools import cache
@@ -67,4 +68,5 @@ class Settings(ImmutableBaseModel):
 
 @cache
 def get_settings() -> Settings:
-    return Settings(**config_loader.load_config(path_to_config=str(BASE_DIR / 'config.toml')))
+    path_to_config = os.getenv('CONFIG_PATH', str(BASE_DIR / 'config.toml'))
+    return Settings(**config_loader.load_config(path_to_config=path_to_config))

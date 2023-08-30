@@ -7,3 +7,4 @@ RUN apt-get install gcc
 RUN python -m pip install poetry
 RUN python -m poetry install --no-root --no-interaction
 CMD poetry run python main.py
+COPY . /usr/src/app/

@@ -1,0 +1,15 @@
+[server]
+    host = '0.0.0.0'
+    port = '8000'
+    debug = 'true'
+
+[database]
+    host = 'postgres'
+    port = 5432
+    user = 'postgres'
+    password = 'password'
+    database = 'postgres'
+    min_size = 4
+    max_size = 12
+    max_queries = 50000
+    max_inactive_connection_lifetime = 300

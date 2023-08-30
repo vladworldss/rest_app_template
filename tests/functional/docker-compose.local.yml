@@ -1,0 +1,19 @@
+version: '3.9'
+
+services:
+  app:
+    environment:
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ../../:/usr/src/app/
+    ports:
+      - '8000:8000'
+
+  tests:
+    volumes:
+      - ../../:/usr/src/app/
+    environment:
+      - PYTHONUNBUFFERED=1
+    entrypoint:
+      bash -c "poetry run python tests/functional/waiters/wait_for_service.py &&
+      poetry run pytest -s -vv tests/functional"
