@@ -7,7 +7,7 @@ from fastapi.testclient import TestClient
 
 from app.api.routes import app_router
 from app.dependencies import get_email_repo
-from tests.unit.testdata import STATIC_DT, STATIC_UUID
+from tests.unit.testdata import STATIC_UUID
 
 
 @pytest.fixture
@@ -32,6 +32,15 @@ def override_email_repo_dependency(when2, app, email_repo, async_result):
     async def _foo():
         when2(email_repo.create_email, ...).thenReturn(async_result(STATIC_UUID))
         return email_repo
+
+    app.dependency_overrides[get_email_repo] = _foo
+    yield
+
+
+@pytest.fixture
+def override_email_repo_empty_mock(when2, async_result, app):
+    async def _foo():
+        return
 
     app.dependency_overrides[get_email_repo] = _foo
     yield
