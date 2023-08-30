@@ -20,7 +20,7 @@ def event_loop():
 
 @pytest_asyncio.fixture(scope="session")
 async def async_app_client():
-    async with AsyncClient(base_url='http://app:8000') as client:
+    async with AsyncClient(base_url=f'http://app:{CONFIG.server.port}') as client:
         yield client
 
 

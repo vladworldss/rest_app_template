@@ -1,6 +1,6 @@
 import pytest
 
-HEALTH_PATH = '/health'
+from app.api.routes import HEALTH_PATH
 
 
 @pytest.mark.asyncio

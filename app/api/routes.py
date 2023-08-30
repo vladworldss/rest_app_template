@@ -8,7 +8,7 @@ from app.dependencies import get_email_repo
 from app.entities.email import EmailBody
 from app.services.interfaces import IEmailRepository
 
-from .models import CreateEmailRequest, GetEmailRequest
+from .models import CreateEmailRequest
 
 app_router = APIRouter()
 
@@ -19,11 +19,9 @@ async def health() -> str:
 
 
 @app_router.get(GET_EMAIL)
-async def get_email_by_id(
-    request: GetEmailRequest, email_repo: IEmailRepository = Depends(get_email_repo)
-) -> EmailBody:
+async def get_email_by_id(email_id: UUID, email_repo: IEmailRepository = Depends(get_email_repo)) -> EmailBody:
     try:
-        email = await email_repo.get_email(request.id)
+        email = await email_repo.get_email(email_id)
         if not email:
             raise HTTPException(detail={'message': 'email not found'}, status_code=404)
 

@@ -1,11 +1,6 @@
 from typing import Optional
-from uuid import UUID
 
 from pydantic import BaseModel
-
-
-class GetEmailRequest(BaseModel):
-    id: UUID
 
 
 class CreateEmailRequest(BaseModel):
