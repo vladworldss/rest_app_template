@@ -1,7 +1,7 @@
 all: build
 
 build:
-	docker build --target base --tag ${USER}/local-docker-hub:latest .
+	docker build --target base --tag ${USER}/rest-app-template:latest .
 
 rm:
-	docker rmi ${USER}/local-docker-hub
+	docker rmi ${USER}/rest-app-template

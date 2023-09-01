@@ -14,7 +14,7 @@ services:
       retries: 5
 
   app:
-    image: ${USER}/local-docker-hub:latest
+    image: ${USER}/rest-app-template:latest
     environment:
       - TZ=Europe/Moscow
       - CONFIG_FORMAT=toml
@@ -25,7 +25,7 @@ services:
         condition: service_healthy
 
   tests:
-    image: ${USER}/local-docker-hub:latest
+    image: ${USER}/rest-app-template:latest
     environment:
       - CONFIG_FORMAT=toml
       - CONFIG_PATH=tests/functional/config.toml

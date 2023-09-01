@@ -6,9 +6,9 @@
 [database]
     host = 'localhost'
     port = 6432
-    user = 'local_docker_hub'
-    password = 'local_docker_hub'
-    database = 'local_docker_hub'
+    user = 'rest_app_template'
+    password = 'rest_app_template'
+    database = 'rest_app_template'
     min_size = 4
     max_size = 12
     max_queries = 50000

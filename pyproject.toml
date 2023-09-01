@@ -1,11 +1,11 @@
 [tool.poetry]
-name = "local-docker-hub"
+name = "rest_app_template"
 version = "0.1.0"
 description = ""
 authors = ["Vladimir Gerasimenko <vladworldss@yandex.ru>"]
 license = "MIT"
 readme = "README.md"
-packages = [{include = "local_docker_hub"}]
+packages = [{include = "rest_app_template"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
